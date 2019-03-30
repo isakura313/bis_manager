@@ -1,0 +1,104 @@
+body {
+    background-color: hsl(217, 71%, 53%);
+    height: 100vh;
+}
+
+.centr {
+    text-align: center;
+}
+
+.main_wrapper {
+    color: hsl(0, 0%, 96%);
+    padding-top: 4em;
+}
+
+.todo__h1 {
+    font-family: Merriweather;
+    color: hsl(0, 0%, 96%);
+}
+
+.MotSpeech {
+    height: 50px;
+    font-family: Merriweather;
+    color: hsl(0, 0%, 96%);
+    margin-bottom: 1rem;
+    height: 70px;
+    /* padding: 40px !important; */
+    display: block;
+    text-align: center; 
+}
+.anime{
+    animation-name: bdSlowIn;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+.enter_data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button_plus {
+    background-color: hsl(141, 71%, 48%);
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 2em !important;
+}
+.button_plus:hover {
+    box-shadow: 2px 2px 5px hsl(349, 64%, 16%);
+    transition: all 0.3s;
+    background-color: hsl(348, 100%, 61%);
+}
+
+.task {
+    width: 100%;
+    padding: 10px;
+    background: hsl(0, 0%, 96%);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    font-family: Roboto, serif;
+    color:black !important;
+    height:50px;
+    
+}
+.wrap-task {
+    display: flex;
+    align-items: center;
+    animation-name: bdSlowIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    height:80px;
+
+}
+.task img {
+    height: 50px;
+    margin-right: 40px;
+    padding: 2px;
+
+}
+
+.deals {
+    width: 86%;
+    display: flex;
+    flex-direction: column;
+}
+
+.trash {
+    margin-top: 20px;
+    margin-left: 0.5em;
+    font-size: 2em;
+    color: #dfdfdf;
+}
+.tr i{
+    text-align: center;
+    margin-bottom: 50%;
+}
+
+.trash:hover {
+    cursor: pointer;
+    color: hsl(348, 100%, 61%);
+    transition: all 0.4s;
+}
