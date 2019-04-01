@@ -102,3 +102,23 @@ body {
     color: hsl(348, 100%, 61%);
     transition: all 0.4s;
 }
+select{
+    width: 40px;
+    font-size: 15px;
+    height: 45px;
+}
+select option {
+    margin: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+select option{ /* value not val */
+    background: rgba(100, 100, 100, 0.3) !important;
+}
+
+select option[value="2"] { /* value not val */
+    background: rgba(200, 200, 200, 0.3) !important;
+}
+

@@ -7,6 +7,10 @@ let motivation_array = ['К черту все! Берись и делай!',
 let button = document.querySelector('.button_plus');
 let deals = document.querySelector('.deals');
 let field = document.querySelector('input');
+let select = document.querySelector('#select');
+
+
+let impo_colors = [];
 
 
 //Здесь у нас модуль в котором происходит прорисовка to-doшечек из версии
@@ -37,7 +41,7 @@ function createItem() {
   let x = "+" + text;
   localStorage.setItem(x, x);
   let index = Math.round(Math.random() * 27);
-  deals.insertAdjacentHTML('afterbegin', `<div class='wrap-task'><div class="task is-size-4"><p>${text}</p></div>
+  deals.insertAdjacentHTML('afterbegin', `<div class='wrap-task'><div class="task is-size-4"><p>${select.value}${text}</p></div>
   <span class="icon is-large tr">
   <i class="fas fa-trash-alt trash"></i>
   </span>
