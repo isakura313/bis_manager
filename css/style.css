@@ -121,4 +121,16 @@ select option{ /* value not val */
 select option[value="2"] { /* value not val */
     background: rgba(200, 200, 200, 0.3) !important;
 }
+.first-danger{
+    background-color: hsl(348, 100%, 61%);
+    color:white !important;
+}
+.second-danger{
+    background-color: hsl(141, 71%, 48%);
+    color:white !important;
+}
+.third-danger{
+    background-color: hsl(204, 86%, 53%);
+    color:white !important;
+}
 
