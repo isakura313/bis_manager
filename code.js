@@ -1,4 +1,5 @@
-//здесь мы задаем массив с фразами, которые должны нас мотивировать
+// класс создания item в которое есть цвет и название дел
+//стоит добавить дату
 class ItemDeal {
   constructor(name, color) {
     this.name = name;
@@ -7,20 +8,27 @@ class ItemDeal {
 }
 
 //итак, у нас есть класс, который  может создавать нам объекты с цветом и текстом дела
-// мб попробовать что -то создать и упаковать в json?
 
 
 
-
+//здесь мы задаем массив с фразами, которые должны нас мотивировать
 let motivation_array = ['К черту все! Берись и делай!',
   'Если ты не знаешь, чего хочешь, ты в итоге останешься с тем, чего точно не хочешь',
   'Все победы начинаются с победы над самим собой',
   'Это своего рода забава, делать невозможное', 'Неважно, кто мы такие, важно, какой у нас план'];
 
-let button = document.querySelector('.button_plus');
-let deals = document.querySelector('.deals');
-let field = document.querySelector('input');
+
+
 let select = document.querySelector('#important');
+//в этом элементе мы получаем значение о важности данного дела
+let field = document.querySelector('input');
+//здесь мы получаем само значение дела ( "помыть посуду", "постирать  белье и т.д.")
+let button = document.querySelector('.button_plus');
+//кнопка, при клике на которую  у нас случается событие добавления
+let deals = document.querySelector('.deals');
+//наш 'root' в который у нас будут добавляться дела 
+
+
 
 // итак, я хочу задавать в зависимости от важности цвет моего дела
 // has-text-danger -- те которые нужно выполнить как можно скорее
@@ -29,12 +37,16 @@ let select = document.querySelector('#important');
 
 
 var IA = ['first-danger', 'second-danger', 'third-danger'];
-// for (var i = 0; i < localStorage.length; i++) {
-// var y = localStorage.key(i);
-// let second = localStorage.getItem(y);
-// let third  = JSON.parse(second);
-// console.log(third);
-// console.log(third.color);
+
+// и различные анимации удаления (Это просто так)
+
+var Animation_Array = ["bounceOut", "rollOut", "rotateOut", "lightSpeedOut"];
+
+function GR() {
+  return Math.ceil(Math.random() * (3));
+}
+console.log(GR());
+
 
 // Здесь у нас модуль в котором происходит прорисовка to-doшечек из версии
 (function DrawOnLoad() {
@@ -54,11 +66,6 @@ var IA = ['first-danger', 'second-danger', 'third-danger'];
 })();
 
 
-// let item = new ItemDeal("pasha", "red");
-// var N = polza.name;
-// var myjson = JSON.stringify(polza);
-// localStorage.setItem(N , myjson );
-// console.log(myjson);
 
 
 
@@ -70,12 +77,11 @@ function createItem() {
     return;
     //return сразу прекращает выполнение функции
   }
-  // let x = "+" + text;
   let item = new ItemDeal(`${text}`, `${select.value - 1}`);
   let N = item.name;
   let myJson = JSON.stringify(item);
   localStorage.setItem(N, myJson);
-  deals.insertAdjacentHTML('afterbegin', `<div class='wrap-task'><div class="task is-size-4 ${IA[select.value - 1]}"><p>${text}</p></div>
+  deals.insertAdjacentHTML('afterbegin', `<div class='wrap-task animated zoomInLeft'><div class="task is-size-4 ${IA[select.value - 1]}"><p>${text}</p></div>
   <span class="icon is-large tr">
   <i class="fas fa-trash-alt trash"></i>
   </span>
@@ -107,13 +113,12 @@ deals.addEventListener('click', function (event) {
     return;
   }
 
-  item2.className = "animated flipOutX wrap-task";
+  item2.className = `animated ${Animation_Array[GR()]} wrap-task`;
   setTimeout(function () {
     item2.parentNode.removeChild(item2);
     let x = item2.textContent;
     x = x.trim();
     //трим вырезает лишние пробелы
-    // x = "+" + x;
     console.log(x);
     localStorage.removeItem(x);
   }, 700)
